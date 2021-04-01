@@ -8,6 +8,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ScoreActivity extends AppCompatActivity
 {
     private TextView yourScore;
+    private TextView yourBMR;
+    private Float weight;
+    private Float height;
+    private String sex;
+    private Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -16,16 +21,36 @@ public class ScoreActivity extends AppCompatActivity
         setContentView(R.layout.activity_score);
 
         yourScore = (TextView) findViewById(R.id.scoreText);
+        yourBMR = (TextView) findViewById(R.id.bmrText);
         Bundle extras = getIntent().getExtras();
 
-        Float score = 0f;
         if (extras != null)
         {
-            score = extras.getFloat("score");
+            weight = Float.parseFloat(extras.getString("weight"));
+            height = Float.parseFloat(extras.getString("height"));
+            age = Integer.parseInt(extras.getString("age"));
+            sex = extras.getString("sex");
         }
 
+        displayBMI(calculateBMI());
+        displayBMR(calculateBMR());
+    }
 
-        displayBMI(score);
+    private float calculateBMR()
+    {
+        if (sex == "Male")
+        {
+            return 66.5f + (13.75f * weight) + (5.003f * height) - (6.775f * (float)age);
+        }
+        else
+        {
+            return 655.1f + (9.563f * weight) + (1.85f * height ) - (4.676f * (float) age);
+        }
+    }
+
+    private float calculateBMI()
+    {
+        return weight / ((height / 100) * (height / 100));
     }
 
     private void displayBMI(float bmi)
@@ -50,5 +75,10 @@ public class ScoreActivity extends AppCompatActivity
             bmiLabel = "Obese Class III";
 
         yourScore.setText(bmiLabel);
+    }
+
+    private void displayBMR(float bmr)
+    {
+        yourBMR.setText(Float.toString(bmr));
     }
 }

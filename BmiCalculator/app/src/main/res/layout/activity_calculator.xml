@@ -6,6 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/enterAgeNumber"
+        android:layout_width="211dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/AgeText"
+        app:layout_constraintTop_toBottomOf="@+id/enterWeightNumber" />
+
+    <TextView
+        android:id="@+id/AgeText"
+        android:layout_width="100dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Age"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WeightText" />
+
     <TextView
         android:id="@+id/WeightText"
         android:layout_width="109dp"
@@ -55,9 +77,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="64dp"
         android:text="Calculate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterWeightNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/enterAgeNumber" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="190dp"
+        android:layout_height="62dp"
+        android:checkedButton="@id/MenRadioButton"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="55dp">
+
+        <RadioButton
+            android:id="@+id/MenRadioButton"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:text="Men" />
+
+        <RadioButton
+            android:id="@+id/WomenRadioButton"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:text="Women" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
