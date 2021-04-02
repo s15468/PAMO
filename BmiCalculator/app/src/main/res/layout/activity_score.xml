@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/infoMsg2"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:text="Your BMR is"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bmrText"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="128dp"
+        android:text="test BMR"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/infoMsg2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/infoMsg"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:text="Your BMI is"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:text="test BMI"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/infoMsg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/openRecipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Dish recipe"
+        app:layout_constraintTop_toBottomOf="@+id/bmrText"
+        tools:layout_editor_absoluteX="142dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
