@@ -8,26 +8,48 @@
 
     <TextView
         android:id="@+id/AppName"
-        android:layout_width="339dp"
-        android:layout_height="185dp"
+        android:layout_width="340dp"
+        android:layout_height="181dp"
+        android:layout_above="@+id/StartButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="207dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="339dp"
+        android:layout_marginTop="99dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="91dp"
         android:text="BMI Calculator"
         android:textAlignment="center"
         android:textSize="24pt" />
 
     <Button
         android:id="@+id/StartButton"
-        android:layout_width="172dp"
-        android:layout_height="89dp"
+        android:layout_width="179dp"
+        android:layout_height="81dp"
+        android:layout_above="@+id/quizButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="32dp"
+        android:text="Start"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/quizButton"
+        android:layout_width="181dp"
+        android:layout_height="53dp"
+        android:layout_above="@+id/covidInfoButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="23dp"
+        android:text="Quiz"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/covidInfoButton"
+        android:layout_width="182dp"
+        android:layout_height="57dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="223dp"
-        android:text="Start"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="138dp"
+        android:text="Covid Info"
         android:textSize="20sp" />
 </RelativeLayout>
