@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
 {
     private Button startButton;
+    private Button quizButton;
+    private Button covidInfoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,7 +21,22 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        covidInfoButton = (Button) findViewById(R.id.covidInfoButton);
+        quizButton = (Button) findViewById(R.id.quizButton);
         startButton = (Button) findViewById(R.id.StartButton);
+
+        covidInfoButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) { covidInfoActivity(); }
+        });
+
+        quizButton.setOnClickListener((new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) { quizActivity(); }
+        }));
+
         startButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -28,6 +45,18 @@ public class MainActivity extends AppCompatActivity
                 calculatorActivity();
             }
         });
+    }
+
+    public void quizActivity()
+    {
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
+    }
+
+    public void covidInfoActivity()
+    {
+        Intent intent = new Intent(this, CovidInfoActivity.class);
+        startActivity(intent);
     }
 
     public void calculatorActivity()
